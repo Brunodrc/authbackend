@@ -1,1 +1,15 @@
 Projeto em typescripte de autenticação e autorização no backend de uma aplicação
+
+tarefas realizadas até o momento:
+> Implementar /token --> {access e refresh token}
+> Gerar JWT Token com duas versões com Secret Key e/ou com Public/Private Key (de arquivo)
+- incompleta, há apenas uma versão
++---> Refresh token pode ser JWT(vantagem de ter expiração) ou uma sequencia aleatória de N caracteres.
+
++---> Salvar refresh em BD vinculado ao usuário
+
+> Implementar rota gerar /refreshtoken
++---> Salvar refreshtoken no BD vinculado ao usuário que deve ser usuário para validar 
+> Armazenar no usuário data de geração do token e armazenar ele tbm no payload (iat) do access_token JWT 
++---> modificar Auth middleware para validar se o token não foi revogado (data de geração modificada no usuários)
++---> mudar manualmente no BD data de geração e testar se o usuário é barrado.
